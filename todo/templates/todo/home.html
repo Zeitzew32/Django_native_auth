@@ -4,4 +4,11 @@
 
 hi im home
 
+{% if user.is_anonymous %}
+<br>
+<br>
+<a href="{% url 'signupuser' %}"">Start</a>
+{% else  %}
+{% endif %}
+
 {% endblock %}
