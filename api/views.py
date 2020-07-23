@@ -1,12 +1,12 @@
-from rest_framework import generics, permissions
 from .serializers import TodoSerializer, TodoCompleteSerializer
-from todo.models import Todo
-from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework import generics, permissions
 from rest_framework.parsers import JSONParser
+from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.db import IntegrityError
-from django.contrib.auth.models import User
+from django.utils import timezone
+from todo.models import Todo
 
 @csrf_exempt
 def signup(request):
