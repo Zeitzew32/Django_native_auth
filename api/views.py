@@ -13,7 +13,7 @@ def signup(request):
     if request.method == 'POST':
         try:
             data = JSONParser().parse(request)
-            user = User.objects.create_user(data['username'], password = data['password'])
+            user = User.objects.create_user(data['username'], password=data['password'])
             user.save()
             return JsonResponse({'token':'dummydata'}, status=201)
         except IntegrityError:
